@@ -115,10 +115,11 @@ namespace TFL.Steps
             JourneyPlannerPage.IsMapViewTextJourneyResultSummaryPageDisplayed().Should().BeFalse();
         }
 
-        [Then(@"the user should see error message '(.*)'t find a journey matching your criteria'")]
-        public void ThenTheUserShouldSeeErrorMessageTFindAJourneyMatchingYourCriteria(string invalidLocationErrorMessage)
+        [Then(@"the user should see invalid location error message")]
+        public void ThenTheUserShouldSeeInvalidLocationErrorMessage()
         {
-            JourneyPlannerPage.GetInvalidLocationErrorMessageOnSummaryPage().Should().Be(invalidLocationErrorMessage);
+            string expectedErrorMessage = "Sorry, we can't find a journey matching your criteria";
+            JourneyPlannerPage.GetInvalidLocationErrorMessageOnSummaryPage().Should().Be(expectedErrorMessage);
         }
 
         [When(@"the user clicks on edit journey button")]

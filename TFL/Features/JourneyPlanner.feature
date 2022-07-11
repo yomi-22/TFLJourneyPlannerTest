@@ -18,7 +18,7 @@ Scenario: User should not see journey result for invalid location
 	And the user enters invalid from location as 'sdfdcc' and to location as 'kjvggf yg'
 	When the user clicks on 'Plan my journey' button
 	Then the user should not see result for the invalid search locations
-	And the user should see error message 'Sorry, we can't find a journey matching your criteria'
+	And the user should see invalid location error message
 
 Scenario: User should not be allowed to plan a journey if no locations are entered into the plan a journey widget
 	Given the user is on tfl home page
