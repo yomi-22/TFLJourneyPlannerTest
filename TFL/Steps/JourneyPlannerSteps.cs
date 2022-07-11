@@ -93,7 +93,7 @@ namespace TFL.Steps
 
             // I did not check the time because the time user search is not displaying the current time, it displays the 
             // closest next train time and this varies each time the user search train journey
-            
+
             var expectedApproximatelyTravelJourney = $"{dateTime.Day}{ dateTime.Date} {dateTime.Month}";
 
             var getLeavingTravelTime = journeySummary.LeavingTravelTime.ToString();
@@ -115,8 +115,8 @@ namespace TFL.Steps
             JourneyPlannerPage.IsMapViewTextJourneyResultSummaryPageDisplayed().Should().BeFalse();
         }
 
-        [Then(@"the user should error message '(.*)'t find a journey matching your criteria'")]
-        public void ThenTheUserShouldErrorMessageTFindAJourneyMatchingYourCriteria(string invalidLocationErrorMessage)
+        [Then(@"the user should see error message '(.*)'t find a journey matching your criteria'")]
+        public void ThenTheUserShouldSeeErrorMessageTFindAJourneyMatchingYourCriteria(string invalidLocationErrorMessage)
         {
             JourneyPlannerPage.GetInvalidLocationErrorMessageOnSummaryPage().Should().Be(invalidLocationErrorMessage);
         }
